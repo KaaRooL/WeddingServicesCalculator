@@ -22,16 +22,14 @@ export default class ServicesFilter {
     return this.handleInternal();
   }
 
-  public addService(serviceType: ServiceType){   
+  public addService(serviceType: ServiceType): ServiceType[]{   
     this._services.add(serviceType);
-    this.handleInternal();
-    return this.services;
+    return this.handleInternal();
   }
 
-  public removeService(serviceType: ServiceType){
+  public removeService(serviceType: ServiceType): ServiceType[]{
     this.removeServiceInternal(serviceType);
-    this.handleInternal();
-    return this.services;
+    return this.handleInternal();
   }
 
   private handleInternal(): ServiceType[] {  
