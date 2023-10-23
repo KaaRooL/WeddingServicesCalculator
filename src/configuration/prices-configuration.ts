@@ -8,8 +8,8 @@ import { PhotoVideoDiscountRule } from "../calculation/discount-rules/photo-vide
 import Discount from "../models/discount";
 import Price from "../models/price";
 
-export default class PricesConfiguration {
-    public static discount: Record<ServiceYear, Discount[]> = {
+export default class CalculationConfiguration {
+    public static discounts: Record<ServiceYear, Discount[]> = {
         2020: [
             { discountType: DiscountNames.PHOTO_PLUS_VIDEO_DISCOUNT, value: 1200 },
             { discountType: DiscountNames.WEDDING_SESSION_DISCOUNT, value: 300 },

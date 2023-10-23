@@ -1,4 +1,4 @@
-import PricesConfiguration from "../configuration/prices-configuration";
+import CalculationConfiguration from "../configuration/prices-configuration";
 import ServiceNames from "../constants/service-names";
 import { ServiceType } from "../constants/service-type";
 import { ServiceYear } from "../constants/service-year";
@@ -52,9 +52,9 @@ export default class Calculation {
 
     private constructor(year: ServiceYear, serviceTypes: ServiceType[]) {
         this._year = year;
-        this._priceConfig = PricesConfiguration.prices[this._year];
-        this._discountConfig = PricesConfiguration.discount[this._year];
-        this._discountManager = DiscountRulesManager.createWithRules(PricesConfiguration.discountRules);
+        this._priceConfig = CalculationConfiguration.prices[this._year];
+        this._discountConfig = CalculationConfiguration.discounts[this._year];
+        this._discountManager = DiscountRulesManager.createWithRules(CalculationConfiguration.discountRules);
         this.addServices(serviceTypes);
     }
 
